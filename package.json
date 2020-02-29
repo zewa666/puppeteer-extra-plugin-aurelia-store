@@ -1,0 +1,34 @@
+{
+  "name": "puppeteer-extra-plugin-aurelia-store",
+  "version": "0.1.0",
+  "description": "Puppeteer extra plugin that allows to dispatch actions to the Aurelia Store during automation",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zewa666/puppeteer-extra-plugin-aurelia-store.git"
+  },
+  "keywords": [
+    "puppeteer",
+    "puppeteer-extra",
+    "puppeteer-extra-plugin",
+    "aurelia",
+    "aurelia-store",
+    "chrome",
+    "headless",
+    "pupeteer"
+  ],
+  "author": {
+    "name": "Vildan Softic",
+    "email": "zewa666@gmail.com",
+    "url": "https://pragmatic-coder.net"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer": "^2.1.1"
+  },
+  "dependencies": {
+    "puppeteer-extra-plugin": "^3.1.4"
+  },
+  "types": "index.d.ts"
+}

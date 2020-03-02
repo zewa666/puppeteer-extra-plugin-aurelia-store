@@ -7,6 +7,11 @@ const { PuppeteerExtraPlugin } = require('puppeteer-extra-plugin')
  *
  *
  * @example
+ * import puppeteer from "puppeteer-extra";
+ * import storePlugin from "puppeteer-extra-plugin-aurelia-store";
+ *
+ * puppeteer.use(storePlugin());
+ *
  * const browser = await puppeteer.launch({
  *   headless: false
  * });
@@ -25,6 +30,14 @@ class Plugin extends PuppeteerExtraPlugin {
     return 'aurelia-store';
   }
 
+  /**
+   * Dispatches an registered action (via actionCreators).
+   * The current state should not be passed as argument
+   *
+   * @param {string | Function} action
+   * @param {...any} params
+   * @throws if the provided action hasn't been registered via actionCreators
+   */
   async dispatch(action, ...params) {
     if (typeof action !== "string" && typeof action !== "function") {
       throw new Error("The provided action has to be either a function or string");
@@ -41,6 +54,10 @@ class Plugin extends PuppeteerExtraPlugin {
     }, action, params);
   }
 
+  /**
+   * Connects to the sites Aurelia Store Redux DevTools protocol
+   * @throws Error if already connected
+   */
   async connectToStore() {
     if (this.connected) {
       throw new Error("Already connected to Aurelia Store");
